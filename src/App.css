@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #88b4bd;
+}
+
+/* TITLE SECTION */
+h1 {
+  width: 100%;
+  background-color: #e1cbda;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 10rem;
+  font-size: 3rem;
+  line-height: 2rem;
+  font-family: 'Quintessential', cursive;
+
+}
+
+/* FORM SECTION */
+.form-section{
+  width: 50rem;
+  margin: 15rem auto;
+}
+
+.alert {
+  background-color: rgb(233, 72, 72);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 2rem;
+
+}
+
+.alert h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form-section input {
+  width: 70%;
+  padding: 1rem 1.5rem;
+  font-size: 1.5em;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.form-section input:focus {
+  outline: none;
+}
+
+.form-section button {
+  width: 20%;
+  display: inline;
+  background:#e1cbda;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0 0 2rem;
+  font-size: 1.5rem;
+  font-family: 'Quintessential', cursive;
+}
+
+.form-section button:hover {
+  background-color: #e2d3dd;
+}
+
+.form-section button:focus {
+  outline: none;
+}
+
+/* BOOKS SECTION */
+.books {
+  display: grid;
+  margin: 2rem 5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 1em;
+}
+
+.book {
+  width: 250px;
+  border: 1px solid rgba(0,0,0,.125);
+  margin: 2rem auto;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.book h2 {
+  font-size: 1.5em;    
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.book-img {
+  position: relative;
+}
+
+.book-img img {
+  width: 100%;
+  height: 250px;
+}
+
+.book-img .link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #e1cbda;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.book-img .link p {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+
+}
+
+.book-img:hover .link {
+  opacity: 0.9;
+}
+
+.book p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0.3rem;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-align: center;
+  line-height: 1.4rem;
+}
+
+.show-more button {
+  width: 10rem;
+  cursor: pointer;
+  background:#e1cbda;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-family: 'Quintessential', cursive;
+}
+
+.loader {
+  text-align: center;
+}
+
+.lds-ellipsis {
+  display: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+@media screen and (max-width: 1140px) {
+  .books {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  html {
+    font-size: 8px;
+  }
+  .books {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 6px;
+  }
+  .books {
+    margin: 0;
+  }
+}
